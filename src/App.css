@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+main {
+  padding: 2rem;
+  margin-left: 200px; /* Füge diesen Stil hinzu */
+  min-height: calc(100vh - 114px);
+}
+
+
+.menu {
+  background-color: #f8f9fa;
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 1rem;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu ul li {
+  margin-bottom: 1rem;
+}
+
+.menu ul li a {
+  color: #333;
+  text-decoration: none;
+}

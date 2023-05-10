@@ -1,19 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-function Header() {
+const Menu = () => {
     return (
-        <header className="header-container">
-            <div className="logo">
-                <Link to="/"><img src="/img/TextLogo.png" alt="Limonaden-Logo" className="logo-image" /></Link>
-            </div>
-            <nav className="nav">
-                <Link className="nav-link" to="/">Startseite</Link>
-                <Link className="nav-link" to="/about">Über uns</Link>
-                <Link className="nav-link" to="/unsere-limonaden">Unsere Limonaden</Link>
-            </nav>
-        </header>
+        <div className="menu">
+            <ul>
+                <li>
+                    <Link to="/casparcg">CasparCG</Link>
+                </li>
+                <li>
+                    <Link to="/lottie">Lottie</Link>
+                </li>
+                <li>
+                    <Link to="/threejs">Three.js</Link>
+                </li>
+            </ul>
+        </div>
     );
-}
+};
 
-export default Header;
+export default Menu;

@@ -25,7 +25,7 @@ const ThreeJS = () => {
 
 function App() {
   return (
-      <div className="App">
+      <div className="App bg-amber-200">
         <Router>
           <Menu />
           <main>

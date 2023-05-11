@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Menu = () => {
     return (
         <div className="menu">
-            <ul>
+            <ul className="text-left">
                 <li>
                     <Link to="/casparcg">CasparCG</Link>
                 </li>

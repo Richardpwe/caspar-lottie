@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const MENU_ITEMS = [
@@ -9,21 +9,6 @@ const MENU_ITEMS = [
 ];
 
 const Menu = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    let timeoutId;
-
-    const handleMouseOver = () => {
-        clearTimeout(timeoutId);
-        setIsOpen(true);
-    };
-
-    const handleMouseLeave = () => {
-        timeoutId = setTimeout(() => {
-            setIsOpen(false);
-        }, 300); // Verzögerung von 300ms
-    };
-
-
     return (
         <div className="navbar bg-base-100 rounded-lg my-4">
             <div className="navbar-start">
@@ -52,22 +37,19 @@ const Menu = () => {
                 <a className="btn btn-ghost normal-case text-xl">StreamShapers</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                    <li tabIndex={0} className="" onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
+                <ul className="menu menu-horizontal px-1 dropdown-hover">
+                    <li tabIndex={0} className="">
                         <a>
                             Documentation
-                            <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8```jsx
-.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                            <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
                         </a>
-                        {isOpen && (
-                            <ul className="p-2 bg-base-100 w-full">
-                                {MENU_ITEMS.map((item) => (
-                                    <li key={item.path}>
-                                        <Link to={item.path}>{item.name}</Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
+                        <ul className="p-2 bg-base-100 dropdown-content w-full">
+                            {MENU_ITEMS.map((item) => (
+                                <li key={item.path}>
+                                    <Link to={item.path}>{item.name}</Link>
+                                </li>
+                            ))}
+                        </ul>
                     </li>
                     <li><a>Tutorials</a></li>
                     <li><a>Configurator</a></li>

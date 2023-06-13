@@ -1,31 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Menu from "./components/menu";
+import Footer from "./components/footer";
+import Copyright from "./components/copyright";
+import Home from "./pages/home";
 import "./App.css";
 
-const Footer = () => {
-  return <footer>© {new Date().getFullYear()} Deine Dokumentationsseite</footer>;
-};
+import CasparCG from "./pages/casparcg";
+import Lottie from "./pages/lottie";
+import AfterEffects from "./pages/aftereffects";
+import ThreeJS from "./pages/threejs";
 
-const Home = () => {
-  return <h2>Willkommen zur Dokumentationsseite!</h2>;
-};
-
-const CasparCG = () => {
-  return <h2>CasparCG Dokumentation</h2>;
-};
-
-const Lottie = () => {
-  return <h2>Lottie Dokumentation</h2>;
-};
-
-const ThreeJS = () => {
-  return <h2>Three.js Dokumentation</h2>;
-};
 
 function App() {
   return (
-      <div className="App bg-amber-200">
+      <div className="container mx-auto">
         <Router>
           <Menu />
           <main>
@@ -33,10 +22,12 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/casparcg" element={<CasparCG />} />
               <Route path="/lottie" element={<Lottie />} />
+              <Route path="/aftereffects" element={<AfterEffects />} />
               <Route path="/threejs" element={<ThreeJS />} />
             </Routes>
           </main>
           <Footer />
+          <Copyright/>
         </Router>
       </div>
   );
